@@ -64,7 +64,8 @@ void *prevList(List *list) {
 
 void pushFront(List *list, void *data) 
 {
-  list->head->data = data;
+  list->current = list->tail->next;
+  list->current->data = data;
 }
 
 void pushBack(List *list, void *data) {
