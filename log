@@ -255,3 +255,18 @@ list.c:71:25: error: incompatible types when assigning to type ‘Node *’ from
       |                         ^
 Compilation failed
 3bc74a2
+Thu 23 Mar 2023 08:45:25 PM UTC: 
+ list.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:73:7: error: ‘list’ is a pointer; did you mean to use ‘->’?
+   73 |   list.head = nuevo;
+      |       ^
+      |       ->
+list.c:74:8: error: ‘nuevo’ is a pointer; did you mean to use ‘->’?
+   74 |   nuevo.prev = NULL;
+      |        ^
+      |        ->
+Compilation failed
+1f99e36

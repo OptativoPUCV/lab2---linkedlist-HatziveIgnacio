@@ -68,8 +68,10 @@ void pushFront(List *list, void *data)
   nuevo->next = list->head;
   if(list->head != NULL)
   {
-     list->head->prev = *nuevo; 
+     list->head->prev = nuevo; 
   }
+  list.head = nuevo;
+  nuevo.prev = NULL;
 }
 
 void pushBack(List *list, void *data) {
