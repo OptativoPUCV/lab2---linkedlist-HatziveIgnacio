@@ -286,3 +286,14 @@ Thu 23 Mar 2023 08:45:47 PM UTC:
  tests:  9|3
 total_score: 35/70
 37e5800
+Thu 23 Mar 2023 08:46:31 PM UTC: 
+ list.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:75:20: error: statement with no effect [-Werror=unused-value]
+   75 |   list->tail->next == nuevo;
+      |   ~~~~~~~~~~~~~~~~~^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+97e3346
