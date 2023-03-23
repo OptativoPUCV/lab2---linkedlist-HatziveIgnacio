@@ -411,3 +411,16 @@ list.c:106:41: error: expected ‘;’ before ‘}’ token
       |     ~                                    
 Compilation failed
 df8bbc1
+Thu 23 Mar 2023 09:13:49 PM UTC: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:106:39: error: expected ‘;’ before ‘}’ token
+  106 |       list->head = list->current->next
+      |                                       ^
+      |                                       ;
+  107 |     }
+      |     ~                                  
+Compilation failed
+4c70839
