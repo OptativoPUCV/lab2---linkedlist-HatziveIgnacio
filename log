@@ -38,3 +38,17 @@ list.c:68:20: error: statement with no effect [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 f4d43b2
+Thu 23 Mar 2023 08:28:26 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:67:33: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   67 |   if(list->head == NULL) return NULL;
+      |                                 ^~~~
+list.c:65:6: note: declared here
+   65 | void pushFront(List *list, void *data)
+      |      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f7d237b
