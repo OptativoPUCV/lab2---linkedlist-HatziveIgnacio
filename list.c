@@ -103,7 +103,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
     }
     else 
     {
-      list->head = list->current->next
+      list->head = list->current->next;
     }
     if(list->current->next != NULL)
     {
