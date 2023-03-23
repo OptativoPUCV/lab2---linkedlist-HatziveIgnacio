@@ -97,14 +97,20 @@ void *popBack(List *list) {
 
 void *popCurrent(List *list) // eliminar nodo de posicion 
 {
-  if(list->head == NULL) return NULL;
-  
-  Node *aux = list->head;
-  while(aux->next != list->current) // buscar nodo anterior
+  if(list->current->prev != NULL;)
     {
-      aux = aux->next;
+        list->current->prev->next = list->current->next;
+
     }
-  aux->next = list->current->next;
+    else {
+        list->head = list->current->next
+    }
+    if(list->current->next != NULL)
+    {
+        list->current->next->prev = list->current->prev;
+    }
+  
+  
   void *data = list->current->data;
   list->current = list->head;
   return data; 
