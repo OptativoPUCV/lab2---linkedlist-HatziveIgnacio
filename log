@@ -90,3 +90,24 @@ list.c:69:20: error: assignment to ‘Node *’ from incompatible pointer type �
 cc1: all warnings being treated as errors
 Compilation failed
 b503e0a
+Thu 23 Mar 2023 08:38:17 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:67:3: error: unknown type name ‘Nodo’; did you mean ‘Node’?
+   67 |   Nodo *nuevo = createNode(data);
+      |   ^~~~
+      |   Node
+list.c:67:17: error: initialization of ‘int *’ from incompatible pointer type ‘Node *’ [-Werror=incompatible-pointer-types]
+   67 |   Nodo *nuevo = createNode(data);
+      |                 ^~~~~~~~~~
+list.c:68:20: error: assignment to ‘Node *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   68 |   list->tail->next = nuevo;
+      |                    ^
+list.c:69:20: error: assignment to ‘Node *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+   69 |   list->head->prev = nuevo;
+      |                    ^
+cc1: all warnings being treated as errors
+Compilation failed
+50b753f
