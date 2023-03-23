@@ -37,33 +37,27 @@ List *createList() {
 }
 
 void *firstList(List *list) {
-  if (list->head == NULL)
-    return NULL;
+  if (list->head == NULL) return NULL;
   list->current = list->head; // actualizo el current
   return list->current->data; // retorno el dato que estaba en head
 }
 
 void *nextList(List *list) {
-  if (list->current == NULL)
-    return NULL;
-  if (list->current->next == NULL)
-    return NULL;                       // condiciones
+  if (list->current == NULL) return NULL;
+  if (list->current->next == NULL) return NULL;// condiciones
   list->current = list->current->next; // ocurre cambio
   return list->current->data;
 }
 
 void *lastList(List *list) {
-  if (list->tail == NULL)
-    return NULL; // condicion
+  if (list->tail == NULL) return NULL; // condicion
   list->current = list->tail;
   return list->tail->data;
 }
 
 void *prevList(List *list) {
-  if (list->current == NULL)
-    return NULL;
-  if (list->current->prev == NULL)
-    return NULL;
+  if (list->current == NULL) return NULL;
+  if (list->current->prev == NULL) return NULL;
   list->current = list->current->prev;
   return list->current->data;
 }
