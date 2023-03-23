@@ -107,7 +107,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
     }
   aux->next = list->current->next;
   void *data = list->current->data;
-  free(list->current);
+  list->current = list->head;
   return data; 
 }
 
