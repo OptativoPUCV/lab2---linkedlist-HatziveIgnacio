@@ -229,3 +229,13 @@ list.c:71:25: error: incompatible types when assigning to type ‘Node *’ from
       |                         ^
 Compilation failed
 ed9450b
+Thu 23 Mar 2023 08:43:28 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:68:8: error: ‘Node’ has no member named ‘head’
+   68 |   nuevo->head = list->head;
+      |        ^~
+Compilation failed
+220564a
