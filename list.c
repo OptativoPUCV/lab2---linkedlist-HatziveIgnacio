@@ -70,13 +70,12 @@ void pushFront(List *list, void *data)
   {
      list->head->prev = nuevo; 
   }
-  if( list->head->next == NULL)
+  if( list->head == NULL) // seria el ultimo termino
   {
     list->tail = nuevo;
   }
-  else{
-    list->head = nuevo;
-  }
+  
+  list->head = nuevo;
   // No se que tengo que hacer con el tail por el error mencionado en la consola
   //list->tail = nuevo; // funciona pero segun yo ta raro
   nuevo->prev = NULL;
