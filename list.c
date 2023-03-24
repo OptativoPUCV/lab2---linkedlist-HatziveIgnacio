@@ -112,6 +112,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
   list->current = list->head;
   return data; 
 */
+  return 0;
 }
 
 void cleanList(List *list) {
