@@ -553,3 +553,9 @@ Fri 24 Mar 2023 12:44:57 AM UTC:
  tests:  10|2
 total_score: 45/70
 e919309
+Fri 24 Mar 2023 12:47:40 AM UTC: 
+ list.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+ tests:  10|2
+total_score: 45/70
+bb5ba85
