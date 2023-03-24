@@ -72,7 +72,7 @@ void pushFront(List *list, void *data)
   }
   list->head = nuevo;
   // No se que tengo que hacer con el tail por el error mencionado en la consola
-  list->tail->next = nuevo;
+  list->tail = nuevo;
   nuevo->prev = NULL;
 }
 
