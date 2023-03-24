@@ -110,8 +110,8 @@ void *popBack(List *list) {
 void *popCurrent(List *list) // eliminar nodo de posicion 
 {
   if(list->head == NULL) return NULL; // si esta vacio
-  
-  Node *aux = createNode(NULL);
+  void* dato = list->current->prev->data;
+  Node *aux = createNode(dato);
   aux = list->current->prev;
   if(list->current != NULL)
     aux->next = list->current->next;
