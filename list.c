@@ -66,7 +66,7 @@ void pushFront(List *list, void *data)
 {
   Node *nuevo = createNode(data);
   nuevo->next = list->head;
-  if(list->head != NULL)
+  if(list->head != NULL) // si existe alguno
   {
      list->head->prev = nuevo; 
   }
@@ -76,8 +76,6 @@ void pushFront(List *list, void *data)
   }
   
   list->head = nuevo;
-  // No se que tengo que hacer con el tail por el error mencionado en la consola
-  //list->tail = nuevo; // funciona pero segun yo ta raro
   nuevo->prev = NULL;
 }
 
@@ -111,7 +109,6 @@ void *popBack(List *list) {
 
 void *popCurrent(List *list) // eliminar nodo de posicion 
 {
-  /*
   if(list->head == NULL) return NULL;
   
   Node *aux = list->head;
@@ -124,7 +121,6 @@ void *popCurrent(List *list) // eliminar nodo de posicion
   void *data = list->current->data;
   list->current = list->head;
   return data; 
-*/
   return 0;
 }
 
