@@ -99,7 +99,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
 {
   if(list->head == NULL) return NULL;
   
-  Node *aux = list->head;
+  Node *aux = list->head;6 
   while(aux->next != list->current) // buscar nodo anterior
     {
       aux = aux->next;

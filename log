@@ -435,3 +435,23 @@ Thu 23 Mar 2023 09:15:25 PM UTC:
  1 file changed, 6 insertions(+), 10 deletions(-)
  tests:  0|0
 c7ed211
+Fri 24 Mar 2023 12:23:18 AM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:102:26: error: statement with no effect [-Werror=unused-value]
+  102 |   Node *aux = list->head;6
+      |                          ^
+list.c:102:27: error: expected ‘;’ before ‘while’
+  102 |   Node *aux = list->head;6
+      |                           ^
+      |                           ;
+  103 |   while(aux->next != list->current) // buscar nodo anterior
+      |   ~~~~~                    
+list.c:102:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+  102 |   Node *aux = list->head;6
+      |         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+1465935
