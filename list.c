@@ -87,14 +87,11 @@ void pushCurrent(List *list, void *data)
   aux->next = list->current->next; 
   aux->prev = list->current;
   
-  if (list->current->next != NULL) 
+  if (list->current->next == NULL) // si no es el ultimo
   { 
-    list->current->next = aux;  
-  }
-  else {  
     list->tail = aux;
   }
-  list->current->next = aux;
+  list->current->next = aux; // dato en el siguiente de current
 }
 
 void *popFront(List *list) {
