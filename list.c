@@ -87,7 +87,7 @@ void pushCurrent(List *list, void *data)
   aux->next = list->current->next; 
   aux->prev = list->current;
   
-  if (list->current->next == NULL) // si no es el ultimo
+  if (list->current->next == NULL) // por si es el ultimo
   { 
     list->tail = aux;
   }
