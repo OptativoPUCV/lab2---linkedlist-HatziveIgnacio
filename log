@@ -480,3 +480,14 @@ Fri 24 Mar 2023 12:27:33 AM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 3a43136
+Fri 24 Mar 2023 12:27:55 AM UTC: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:115:1: error: control reaches end of non-void function [-Werror=return-type]
+  115 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1b94b7b
