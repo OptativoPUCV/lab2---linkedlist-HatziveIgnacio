@@ -37,44 +37,49 @@ List *createList() {
 }
 
 void *firstList(List *list) {
-  if (list->head == NULL) return NULL;
+  if (list->head == NULL)
+    return NULL;
   list->current = list->head; // actualizo el current
   return list->current->data; // retorno el dato que estaba en head
 }
 
 void *nextList(List *list) {
-  if (list->current == NULL) return NULL;
-  if (list->current->next == NULL) return NULL;// condiciones
+  if (list->current == NULL)
+    return NULL;
+  if (list->current->next == NULL)
+    return NULL;                       // condiciones
   list->current = list->current->next; // ocurre cambio
   return list->current->data;
 }
 
 void *lastList(List *list) {
-  if (list->tail == NULL) return NULL; // condicion
+  if (list->tail == NULL)
+    return NULL; // condicion
   list->current = list->tail;
   return list->tail->data;
 }
 
 void *prevList(List *list) {
-  if (list->current == NULL) return NULL;
-  if (list->current->prev == NULL) return NULL;
+  if (list->current == NULL)
+    return NULL;
+  if (list->current->prev == NULL)
+    return NULL;
   list->current = list->current->prev;
   return list->current->data;
 }
 
-void pushFront(List *list, void *data) 
-{
+void pushFront(List *list, void *data) {
   Node *nuevo = createNode(data);
   nuevo->next = list->head;
-  if(list->head != NULL) // si existe alguno
+  if (list->head != NULL) // si existe alguno
   {
-     list->head->prev = nuevo; 
+    list->head->prev = nuevo;
   }
-  if( list->head == NULL) // seria el ultimo termino
+  if (list->head == NULL) // seria el ultimo termino
   {
     list->tail = nuevo;
   }
-  
+
   list->head = nuevo;
   nuevo->prev = NULL;
 }
@@ -84,14 +89,13 @@ void pushBack(List *list, void *data) {
   pushCurrent(list, data);
 }
 
-void pushCurrent(List *list, void *data) 
-{
+void pushCurrent(List *list, void *data) {
   Node *aux = createNode(data);
-  aux->next = list->current->next; 
+  aux->next = list->current->next;
   aux->prev = list->current;
-  
+
   if (list->current->next == NULL) // por si es el ultimo
-  { 
+  {
     list->tail = aux;
   }
   list->current->next = aux; // dato en el siguiente de current
@@ -107,13 +111,18 @@ void *popBack(List *list) {
   return popCurrent(list);
 }
 
-void *popCurrent(List *list) // eliminar nodo de posicion 
+void *popCurrent(List *list) // eliminar nodo de posicion
 {
-  if(list->head == NULL) return NULL; // si esta vacio
-  void* dato = list->current->prev->data;
-  Node *aux = createNode(dato);
+
+  // Revisar si exite algo en la siguiente posicion del current, que current
+  // exista y no este vacio que la posicion prev al next ahora apunte al next
+  // del current que posicion next->prev del current apunte al prev de current
+  // elminar current
+  if (list->head == NULL)
+    return NULL; // si esta vacio
+  Node *aux = createNode(NULL);
   aux = list->current->prev;
-  if(list->current != NULL)
+  if (list->current != NULL)
     aux->next = list->current->next;
   return aux->data;
 }
