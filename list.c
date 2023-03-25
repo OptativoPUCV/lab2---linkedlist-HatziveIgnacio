@@ -114,11 +114,8 @@ void *popBack(List *list) {
 void *popCurrent(List *list) // eliminar nodo de posicion
 {
 
-  // Revisar si exite algo en la siguiente posicion del current, que current
-  // exista y no este vacio que la posicion prev al next ahora apunte al next
-  // del current que posicion next->prev del current apunte al prev de current
   // elminar current
-  if (list->head == NULL) return NULL; // si esta vacio
+  if (list->current == NULL) return NULL; // si esta vacio
   void *data = list->current->data;
   // conectar prev con el nuevo que le sigue
   if (list->current == list->head) // si es el primero
