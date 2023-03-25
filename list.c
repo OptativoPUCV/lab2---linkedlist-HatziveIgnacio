@@ -118,13 +118,28 @@ void *popCurrent(List *list) // eliminar nodo de posicion
   // exista y no este vacio que la posicion prev al next ahora apunte al next
   // del current que posicion next->prev del current apunte al prev de current
   // elminar current
-  if (list->head == NULL)
-    return NULL; // si esta vacio
-  Node *aux = createNode(NULL);
-  aux = list->current->prev;
-  if (list->current != NULL)
-    aux->next = list->current->next;
-  return aux->data;
+  if (list->head == NULL) return NULL; // si esta vacio
+  void *data = list->current->data;
+  // conectar prev con el nuevo que le sigue
+  if (list->current->prev == NULL) // si es el primero
+  {
+    list->head = list->current->next;
+  }
+  else { // caso general
+    list->current->prev->next = list->current->next;
+  }
+  // conectar el siguiente con el prev nuevo
+  if(list->current->next == NULL) // por si es la cola
+  {
+    list->tail = list->current->prev;
+  }
+  else { // general
+    list->current->next->prev = list->current->prev;
+  }
+
+  list->current = list->current->next;
+  free(list->current);
+  return data;
 }
 
 void cleanList(List *list) {
