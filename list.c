@@ -121,7 +121,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
   if (list->head == NULL) return NULL; // si esta vacio
   void *data = list->current->data;
   // conectar prev con el nuevo que le sigue
-  if (list->current->prev == list->head) // si es el primero
+  if (list->current == list->head) // si es el primero
   {
     list->head = list->current->next;
   }
@@ -129,7 +129,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
     list->current->prev->next = list->current->next;
   }
   // conectar el siguiente con el prev nuevo
-  if(list->current->next == list->tail) // por si es la cola
+  if(list->current == list->tail) // por si es la cola
   {
     list->tail = list->current->prev;
   }
