@@ -113,7 +113,6 @@ void *popBack(List *list) {
 
 void *popCurrent(List *list) // eliminar nodo de posicion
 {
-
   // elminar current
   if (list->current == NULL) return NULL; // si esta vacio
   void *data = list->current->data;
@@ -135,7 +134,7 @@ void *popCurrent(List *list) // eliminar nodo de posicion
   }
 
   list->current = list->current->next;
-  free(list->current);
+  
   return data;
 }
 
